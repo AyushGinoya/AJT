@@ -8,6 +8,7 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Iterator;
+import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
@@ -65,6 +66,8 @@ public class SetMapAlist {
         m.put(3,30);
         m.put(4, 34);
         
+      
+        
         System.out.println(m);
         
         boolean k = m.containsKey(4);
@@ -88,7 +91,7 @@ public class SetMapAlist {
         
         System.out.println("<----------------------------ArrayList---------------------------->");
         
-        ArrayList<Integer> list = new ArrayList<>(10);
+        List<Integer> list = new ArrayList<>(10);
         
         list.add(1);
         list.add(2);

@@ -6,14 +6,14 @@ package functionalprogramming;
 
 /**
  *
- * @author ginoy
+ * @author ginoya
  */
 
-
-interface Calculator {
-
-    public double calculate(double x,double y,char opt);
+interface calculate 
+{
+    double calcu(double a,double b,char c);
 }
+
 public class FunctionalProgramming{
 
     /**
@@ -21,20 +21,19 @@ public class FunctionalProgramming{
      */
     public static void main(String[] args) {
         // TODO code application logic here
-            Calculator cal =(x,y,opt)->{
-               if(opt=='+'){
-                   return x+y;
-               }else if(opt=='-'){
-                   return x-y;
-               } else if(opt=='*'){
-                   return x*y;
-               } else if(opt=='/'){
-                   return x/y;
-               }else
-                return 0;
-            };  
-            
-            double ans1 = cal.calculate(1,10,'+');
-            System.out.println(ans1);   
+        calculate c = (i,j,k) -> {
+            if(k=='+'){
+                return i+j;
+            } else if(k=='-'){
+                return i-j;
+            } else if(k=='/'){
+                return i/j;
+            } else if(k=='*'){
+                return i*j;
+            }
+            return 0;
+        };
+        double result = c.calcu(5, 2, '+');
+        System.out.println(result);
     }
 }
