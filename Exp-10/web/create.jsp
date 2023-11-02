@@ -4,8 +4,8 @@
     Author     : ginoy
 --%>
 
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>  
-<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>  
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql" %>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -15,31 +15,30 @@
     </head>
     <body>
         <sql:setDataSource var="db" 
-                       driver="com.mysql.cj.jdbc.Driver"
-                       url="jdbc:mysql://localhost:3306/collage?zeroDateTimeBehavior=CONVERT_TO_NULL"
-                       user="root" password="Ayush@#2000"/>
-        <%! 
-            String id;
-            String newName;
-        %>
-        <% 
-            id=request.getParameter("ID");
-            newName=request.getParameter("newName");
-        
-        %>
-        <sql:update dataSource="${db}" var="rs">  
+                           driver="com.mysql.cj.jdbc.Driver"
+                           url="jdbc:mysql://localhost:3306/collage?zeroDateTimeBehavior=CONVERT_TO_NULL"
+                           user="root" password="Ayush@#2000"/>
 
-            
+        <c:set var="id" value="${param.ID}" />
+        <c:set var="newName" value="${param.newName}" />
+
+        <sql:update dataSource="${db}" var="rowsAffected">  
             INSERT INTO sqlcrud (Name, Id)
-            VALUES ('<%= newName %>', '<%= id %>')
-            
-        </sql:update> 
-            
-        <% 
-            RequestDispatcher rd=request.getRequestDispatcher("display.jsp");
-            rd.include(request, response);
-        
-        %>
-        
-    </body>
+            VALUES (?, ?)
+            <sql:param value="${newName}" />
+            <sql:param value="${id}" />
+        </sql:update>
+
+        <c:choose>
+            <c:when test="${rowsAffected > 0}">
+                <p>Creation Successful</p>
+            </c:when>
+            <c:otherwise>
+                <p>Creation Failed</p>
+            </c:otherwise>
+        </c:choose>
+
+        <jsp:include page="display.jsp" />
+
+    </body>
 </html>

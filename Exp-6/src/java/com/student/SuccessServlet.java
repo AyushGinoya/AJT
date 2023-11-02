@@ -1,4 +1,3 @@
-
 package com.student;
 
 import java.io.IOException;
@@ -9,28 +8,16 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author ginoy
- */
-@WebServlet(name = "SuccesServlet", urlPatterns = {"/SuccesServlet"})
-public class SuccesServlet extends HttpServlet {
+@WebServlet(name = "SuccessServlet", urlPatterns = {"/SuccessServlet"})
+public class SuccessServlet extends HttpServlet {
 
- 
-    protected void processRequest(HttpServletRequest request, HttpServletResponse response)
+    protected void doPost(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         try (PrintWriter out = response.getWriter()) {
             /* TODO output your page here. You may use following sample code. */
             response.setContentType("text/html");
-            out.println("<h2>Succesfull Login</h2>");
+            out.println("<h2>Successful Login</h2>");
         }
     }
-
-    @Override
-    protected void doPost(HttpServletRequest request, HttpServletResponse response)
-            throws ServletException, IOException {
-        processRequest(request, response);
-    }
-
 }

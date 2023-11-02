@@ -15,29 +15,27 @@
         <title>JSP Page</title>
     </head>
     <body>
-    <sql:setDataSource var="db" 
-                       driver="com.mysql.cj.jdbc.Driver"
-                       url="jdbc:mysql://localhost:3306/collage?zeroDateTimeBehavior=CONVERT_TO_NULL"
-                       user="root" password="Ayush@#2000"/>
+        <sql:setDataSource var="db" 
+                           driver="com.mysql.cj.jdbc.Driver"
+                           url="jdbc:mysql://localhost:3306/collage?zeroDateTimeBehavior=CONVERT_TO_NULL"
+                           user="root" password="Ayush@#2000"/>
 
-    <sql:query dataSource="${db}" var="rs">  
-        SELECT * from sqlcrud;
-    </sql:query>
+        <sql:query dataSource="${db}" var="rs">  
+            SELECT * from sqlcrud;
+        </sql:query>
 
 
-    <table border="2" width="100%">  
-        <tr>  
-            <th>Student ID</th>  
-            <th>First Name</th>   
-        </tr>  
-        <c:forEach var="table" items="${rs.rows}">  
+        <table border="2" width="100%">  
             <tr>  
-                <td><c:out value="${table.id}"/></td>  
-            <td><c:out value="${table.name}"/></td>   
+                <th>Student ID</th>  
+                <th>First Name</th>   
             </tr>  
-        </c:forEach>  
-    </table>  
-
-
-</body>
+            <c:forEach var="table" items="${rs.rows}">  
+                <tr>  
+                    <td><c:out value="${table.id}"/></td>  
+                    <td><c:out value="${table.name}"/></td>   
+                </tr>  
+            </c:forEach>  
+        </table>  
+    </body>
 </html>

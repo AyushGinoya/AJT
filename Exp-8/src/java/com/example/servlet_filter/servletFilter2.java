@@ -58,7 +58,7 @@ public class servletFilter2 implements Filter
         else if(id<0)
         {
             RequestDispatcher requestDispatcher = request.getRequestDispatcher("index.jsp");
-            out.println("<h1>ID is Negative!!!</h1>");
+            out.println("<h1 >ID is Negative!!!</h1>");
             requestDispatcher.include(request,response);
         }
         else

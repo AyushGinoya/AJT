@@ -3,6 +3,7 @@ package builderpattern;
 public class User {
     private final String USER_ID;
     private  final String USER_NAME;
+    private final String USER_EMAIL;
 
     //The toString() method is overridden to provide a custom string representation of the user object.
     @Override
@@ -13,8 +14,6 @@ public class User {
                 ", USER_EMAIL='" + USER_EMAIL + '\'' +
                 '}';
     }
-
-    private final String USER_EMAIL;
 
     private User(UserBuilder userBuilder) {
         this.USER_ID = userBuilder.USER_ID;

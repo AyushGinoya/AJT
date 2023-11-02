@@ -1,2 +1,7 @@
-package Facade;public class Restaurant {
+package Facade;
+
+public class Restaurant {
+   public void prepareOrder(){
+       System.out.println("Order being preparing");
+   }
 }

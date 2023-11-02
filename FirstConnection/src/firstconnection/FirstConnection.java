@@ -1,8 +1,6 @@
 package firstconnection;
 
 import java.sql.*;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 public class FirstConnection {
 
@@ -18,7 +16,11 @@ public class FirstConnection {
             System.out.println("Connection Established successfully");
             
             Statement st = con.createStatement();
+            //int row1 = st.executeUpdate("insert into students values('Raj',110) ");
+            //int row2 = st.executeUpdate("update students set name = 'Ram' where id= 110 " );
+            //int row2 = st.executeUpdate("update students set name = 'Ram' where id = 110");
             ResultSet rs = st.executeQuery(query);
+            
 
             while ( rs.next() ) {
                 String name = rs.getString("name");

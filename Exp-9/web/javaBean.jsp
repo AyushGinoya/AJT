@@ -8,20 +8,20 @@
 
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
-<head>
-    <title>JavaBeans</title>
-</head>
-<body>
-    <jsp:useBean id="jBeans" class="com.example.javabeans.javaBeansClass" scope="request">
-        <jsp:setProperty name="jBeans" property="*"/>
-    </jsp:useBean>
+    <head>
+    <title>Jav Beans</title>
+    </head>
+    <body>
+        <jsp:useBean id="jBeans" class="com.example.javabeans.javaBeansClass" scope="request">
+            <jsp:setProperty name="jBeans" property="*"/>
+        </jsp:useBean>
 
-<div>
-    <h1>
-        ID: <jsp:getProperty name="jBeans" property="id"/><br><br>
-        Name: <jsp:getProperty name="jBeans" property="name"/><br><br>
-    </h1>
-</div>
+        <div>
+            <h1>
+                ID: <jsp:getProperty name="jBeans" property="id"/><br><br>
+                Name: <jsp:getProperty name="jBeans" property="name"/><br><br>
+            </h1>
+        </div>
 
-</body>
+    </body>
 </html>

@@ -47,14 +47,14 @@ public class ServletReg extends HttpServlet {
             } else {
                 try {
                     Connection con = DBConnection.getConnection();
-                    String sq = "Select * from studentdata WHERE id=?";
+                    String sq = "Select * from studentfilter WHERE id=?";
 
                     PreparedStatement pst = con.prepareStatement(sq);
                     pst.setString(1, id);
                     ResultSet resultSet = pst.executeQuery();
 
                     if (!resultSet.next()) {
-                        String sq2 = "Insert into studentdata VALUES (?,?)";
+                        String sq2 = "Insert into studentfilter VALUES (?,?)";
                         PreparedStatement ist = con.prepareStatement(sq2);
                         ist.setString(1, name);
                         ist.setString(2, id);

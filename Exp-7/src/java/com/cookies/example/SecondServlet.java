@@ -37,7 +37,7 @@ public class SecondServlet extends HttpServlet {
                and create is true, returns a new session.*/
             String s = (String) hs.getAttribute("name");
 
-            String user = (String) request.getAttribute("user");
+            //String user = (String) request.getAttribute("user");
             out.println("<!DOCTYPE html>");
             out.println("<html>");
             out.println("<head>");

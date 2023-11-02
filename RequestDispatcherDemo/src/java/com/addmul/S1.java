@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 
 /**
  *
- * @author ginoy
+ * @author ginoya
  */
 public class S1 extends HttpServlet {
 
@@ -38,9 +38,10 @@ public class S1 extends HttpServlet {
             
             request.setAttribute("Sum", sum);
             
+            out.println("Ans is");
             RequestDispatcher rd = request.getRequestDispatcher("S2");
             rd.forward(request, response);
-            
+            //rd.include(request, response);
             
             out.println("</body>");
             out.println("</html>");

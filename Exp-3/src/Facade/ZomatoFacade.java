@@ -1,6 +1,6 @@
 package Facade;
 
-public class ZematoFacade {
+public class ZomatoFacade {
     public static void main(String[] args) {
         // Create instances of your classes: DeliveryTeam, DeliveryBoy, and Restaurant
         DeliveryTeam deliveryTeam = new DeliveryTeam();
